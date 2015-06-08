@@ -1,28 +1,23 @@
 import org.junit.Test;
 
-import static org.hamcrest.Matchers.is;
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
 public class GridTest {
+
     @Test
     public void checkIfNeighboursPresentAreAllDead() {
-        Grid grid = new Grid(50);
+        ArrayList<Cell> neighbours = new ArrayList<>();
+        neighbours.add(new Cell(2, 3));
+        neighbours.add(new Cell(1, 3));
+        neighbours.add(new Cell(4, 3));
+        neighbours.add(new Cell(6, 3));
+        Grid grid = new Grid(neighbours);
 
         int actualDeadMembers = grid.getAliveMembers(5, 5);
         int expectedDeadMembers = 0;
 
         assertEquals(actualDeadMembers, expectedDeadMembers);
-    }
-
-    @Test
-    public void checkIfLifeAssignedToCell() {
-        Grid grid = new Grid(50);
-        grid.assignLifeToCell(5, 5, 1);
-
-        int actualLife = grid.gridBox[5][5];
-        int expectedLife = 1;
-
-        assertThat(actualLife, is(expectedLife));
     }
 }

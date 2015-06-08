@@ -13,15 +13,6 @@ public class Cell {
 
         Cell cell = (Cell) o;
 
-        if (x != cell.x) return false;
-        return y == cell.y;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
+        return x == cell.x && y == cell.y;
     }
 }
