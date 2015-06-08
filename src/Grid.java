@@ -8,7 +8,7 @@ public class Grid {
         this.aliveCells = aliveCells;
     }
 
-    public int getAliveMembers(int x, int y) {
+    public int getAliveMembers() {
         return 0;
     }
 }

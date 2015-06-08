@@ -15,7 +15,7 @@ public class GridTest {
         neighbours.add(new Cell(6, 3));
         Grid grid = new Grid(neighbours);
 
-        int actualDeadMembers = grid.getAliveMembers(5, 5);
+        int actualDeadMembers = grid.getAliveMembers();
         int expectedDeadMembers = 0;
 
         assertEquals(actualDeadMembers, expectedDeadMembers);
